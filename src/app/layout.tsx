@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import { Header } from "@/components/header";
 import "./globals.css";
 
 const geist = Geist({
@@ -15,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "App",
+  title: "DevRoast",
 };
 
 export default function RootLayout({
@@ -28,7 +29,10 @@ export default function RootLayout({
       lang="en"
       className={`${geist.variable} ${jetbrainsMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body className="bg-bg-page font-sans text-text-primary">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -12,10 +12,10 @@ const button = tv({
   variants: {
     variant: {
       primary:
-        "bg-emerald-500 text-neutral-950 hover:bg-emerald-400 active:bg-emerald-600",
+        "bg-emerald-500 text-neutral-950 enabled:hover:bg-emerald-400 enabled:active:bg-emerald-600",
       secondary:
-        "bg-neutral-900 text-emerald-500 ring-1 ring-emerald-500/30 hover:bg-neutral-800",
-      ghost: "bg-transparent text-emerald-500 hover:bg-emerald-500/10",
+        "bg-neutral-900 text-emerald-500 ring-1 ring-emerald-500/30 enabled:hover:bg-neutral-800",
+      ghost: "bg-transparent text-emerald-500 enabled:hover:bg-emerald-500/10",
     },
     size: {
       sm: "px-4 py-1.5 text-xs",

@@ -8,7 +8,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CodeBlock } from "@/components/ui/code-block";
 import { DiffLine } from "@/components/ui/diff-line";
-import { LeaderboardRow } from "@/components/ui/leaderboard-row";
+import {
+  LeaderboardRow,
+  LeaderboardRowCode,
+  LeaderboardRowLanguage,
+  LeaderboardRowRank,
+  LeaderboardRowScore,
+} from "@/components/ui/leaderboard-row";
 import { ScoreRing } from "@/components/ui/score-ring";
 import { Toggle } from "@/components/ui/toggle";
 import type { ComponentProps, ReactNode } from "react";
@@ -234,25 +240,28 @@ export default function ComponentsShowcasePage() {
         >
           <SubSection title="Tabela">
             <div className="w-full overflow-hidden rounded-md border border-border-primary">
-              <LeaderboardRow
-                rank={1}
-                score={2.1}
-                codePreview="function calculateTotal(items) { var total = 0; for (var i = 0; i < items.length; i++) { total += items[i].price; } return total; }"
-                language="javascript"
-              />
-              <LeaderboardRow
-                rank={2}
-                score={5.3}
-                codePreview="export default function handler(req, res) { const data = fetchData(); res.json(data); }"
-                language="typescript"
-              />
-              <LeaderboardRow
-                rank={3}
-                score={8.7}
-                codePreview="const sum = (a, b) => a + b"
-                language="python"
-                className="border-b-0"
-              />
+              <LeaderboardRow>
+                <LeaderboardRowRank rank={1} />
+                <LeaderboardRowScore score={2.1} />
+                <LeaderboardRowCode>
+                  {"function calculateTotal(items) { var total = 0; for (var i = 0; i < items.length; i++) { total += items[i].price; } return total; }"}
+                </LeaderboardRowCode>
+                <LeaderboardRowLanguage>javascript</LeaderboardRowLanguage>
+              </LeaderboardRow>
+              <LeaderboardRow>
+                <LeaderboardRowRank rank={2} />
+                <LeaderboardRowScore score={5.3} />
+                <LeaderboardRowCode>
+                  {"export default function handler(req, res) { const data = fetchData(); res.json(data); }"}
+                </LeaderboardRowCode>
+                <LeaderboardRowLanguage>typescript</LeaderboardRowLanguage>
+              </LeaderboardRow>
+              <LeaderboardRow className="border-b-0">
+                <LeaderboardRowRank rank={3} />
+                <LeaderboardRowScore score={8.7} />
+                <LeaderboardRowCode>const sum = (a, b) =&gt; a + b</LeaderboardRowCode>
+                <LeaderboardRowLanguage>python</LeaderboardRowLanguage>
+              </LeaderboardRow>
             </div>
           </SubSection>
         </Section>

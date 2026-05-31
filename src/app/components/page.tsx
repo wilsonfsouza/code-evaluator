@@ -1,3 +1,4 @@
+import type { ComponentProps, ReactNode } from "react";
 import {
   AnalysisCard,
   AnalysisCardDescription,
@@ -17,7 +18,6 @@ import {
 } from "@/components/ui/leaderboard-row";
 import { ScoreRing } from "@/components/ui/score-ring";
 import { Toggle } from "@/components/ui/toggle";
-import type { ComponentProps, ReactNode } from "react";
 
 const sampleCode = `function calculateTotal(items) {
   let total = 0;
@@ -244,7 +244,9 @@ export default function ComponentsShowcasePage() {
                 <LeaderboardRowRank rank={1} />
                 <LeaderboardRowScore score={2.1} />
                 <LeaderboardRowCode>
-                  {"function calculateTotal(items) { var total = 0; for (var i = 0; i < items.length; i++) { total += items[i].price; } return total; }"}
+                  {
+                    "function calculateTotal(items) { var total = 0; for (var i = 0; i < items.length; i++) { total += items[i].price; } return total; }"
+                  }
                 </LeaderboardRowCode>
                 <LeaderboardRowLanguage>javascript</LeaderboardRowLanguage>
               </LeaderboardRow>
@@ -252,14 +254,18 @@ export default function ComponentsShowcasePage() {
                 <LeaderboardRowRank rank={2} />
                 <LeaderboardRowScore score={5.3} />
                 <LeaderboardRowCode>
-                  {"export default function handler(req, res) { const data = fetchData(); res.json(data); }"}
+                  {
+                    "export default function handler(req, res) { const data = fetchData(); res.json(data); }"
+                  }
                 </LeaderboardRowCode>
                 <LeaderboardRowLanguage>typescript</LeaderboardRowLanguage>
               </LeaderboardRow>
               <LeaderboardRow className="border-b-0">
                 <LeaderboardRowRank rank={3} />
                 <LeaderboardRowScore score={8.7} />
-                <LeaderboardRowCode>const sum = (a, b) =&gt; a + b</LeaderboardRowCode>
+                <LeaderboardRowCode>
+                  const sum = (a, b) =&gt; a + b
+                </LeaderboardRowCode>
                 <LeaderboardRowLanguage>python</LeaderboardRowLanguage>
               </LeaderboardRow>
             </div>

@@ -1,4 +1,4 @@
-import { codeToHtml, type BundledLanguage } from "shiki";
+import { type BundledLanguage, codeToHtml } from "shiki";
 import { twMerge } from "tailwind-merge";
 
 interface CodeBlockProps {
@@ -8,14 +8,24 @@ interface CodeBlockProps {
   className?: string;
 }
 
-export async function CodeBlock({ code, lang, filename, className }: CodeBlockProps) {
+export async function CodeBlock({
+  code,
+  lang,
+  filename,
+  className,
+}: CodeBlockProps) {
   const html = await codeToHtml(code, {
     lang,
     theme: "vesper",
   });
 
   return (
-    <div className={twMerge("overflow-hidden rounded-md border border-border-primary bg-bg-input", className)}>
+    <div
+      className={twMerge(
+        "overflow-hidden rounded-md border border-border-primary bg-bg-input",
+        className,
+      )}
+    >
       <div className="flex h-10 items-center gap-3 border-b border-border-primary px-4">
         <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-accent-red" />
         <span

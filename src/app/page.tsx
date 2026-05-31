@@ -56,7 +56,7 @@ export default function Home() {
           </p>
         </header>
 
-        <HomeEditor defaultCode={SAMPLE_CODE} filename="paste_here.js" />
+        <HomeEditor defaultCode={SAMPLE_CODE} filename="paste_here" />
 
         <p className="text-center font-mono text-[12px] text-text-tertiary">
           {STATS.roasted.toLocaleString()} codes roasted
